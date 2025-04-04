@@ -45,6 +45,10 @@ add_subdirectory(cmake/stm32cubemx)
 
 # Add Local YRShell, i.e. one tracked via git submodules
 add_subdirectory(lib/YRShell)
+if( NOT EXISTS ${CMAKE_SOURCE_DIR}/lib/YRShell/.git )
+    message( SEND_ERROR "The git submodules are not available. Please run git submodule update --init --recursive"
+)
+endif()
 
 # Link directories setup
 target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
