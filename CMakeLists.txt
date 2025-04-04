@@ -40,8 +40,8 @@ add_executable(${CMAKE_PROJECT_NAME})
 # Add STM32CubeMX generated sources
 add_subdirectory(cmake/stm32cubemx)
 
-# Add YRShell
-add_subdirectory(lib/YRShell)
+# Add Remote YRShell, i.e. it will be fetched just before the build
+add_subdirectory(cmake/yrshell_remote)
 
 # Link directories setup
 target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
