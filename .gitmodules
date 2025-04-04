@@ -1,0 +1,3 @@
+[submodule "lib/YRShell"]
+	path = lib/YRShell
+	url = https://github.com/brymatpc/YRShell
