@@ -32,7 +32,7 @@ project(${CMAKE_PROJECT_NAME})
 message("Build type: " ${CMAKE_BUILD_TYPE})
 
 # Enable CMake support for ASM and C languages
-enable_language(C ASM)
+enable_language(CXX C ASM)
 
 # Create an executable object type
 add_executable(${CMAKE_PROJECT_NAME})
@@ -48,16 +48,22 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user sources here
+    ${CMAKE_SOURCE_DIR}/app/AppInterface.cpp
+    ${CMAKE_SOURCE_DIR}/lib/YRShell/YRShell.cpp
 )
 
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined include paths
+    ${CMAKE_SOURCE_DIR}/app
+    ${CMAKE_SOURCE_DIR}/lib/YRShell
+    ${CMAKE_SOURCE_DIR}/lib/YRShell/utility
 )
 
 # Add project symbols (macros)
 target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined symbols
+    PLATFORM_STM32_VSCODE
 )
 
 # Add linked libraries
