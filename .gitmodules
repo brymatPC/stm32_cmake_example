@@ -1,5 +1,5 @@
 [submodule "lib/YRShell"]
 	path = lib/YRShell
-	url = https://github.com/brymatpc/YRShell
+	url = git@github.com:brymatPC/YRShell.git
 	branch = 20250404_Cmake
 
